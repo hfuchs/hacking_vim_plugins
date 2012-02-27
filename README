@@ -1,0 +1,30 @@
+Hacking Vim Plugins
+============================
+
+2012-02-27, Created by Hagen Fuchs <code@hfuchs.net>
+
+Introduction/Motivation
+--------------------------------------------------
+
+When hacking on the odd Vim plugin, I sometimes managed to not only
+break the plugin, but also my working Vim configuration.  While working
+on [Vimoutliner](http://www.vimoutliner.org/), I finally searched for
+a way to have multiple, independent, self-contained Vim environments.
+
+This project presents one straightforward solution using Vundle.
+
+Usage
+--------------------------------------------------
+
+Create a project directory and clone Vundle there:
+
+    mkdir [project_dir]; cd !$
+    git clone https://github.com/gmarik/vundle.git dot_vim/bundle/vundle
+
+Enter your bundles in dev.vimrc, say :BundleInstall (you know,
+straightforward Vundle usage).  From then on, simply work with
+
+    vim -u dev.vimrc [file_to_hack_on]
+
+Tune debug and profiling parameters to taste.
+
