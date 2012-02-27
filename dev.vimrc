@@ -22,7 +22,7 @@
 
 " --- Debugging'n'Profiling
 " ----------------------------------------------------------------------
-"set verbose=9
+"set verbose=10
 "set verbosefile=vim_debug
 set history=1000
 
@@ -35,18 +35,18 @@ set history=1000
 
 " --- Vundle & General Settings
 " ----------------------------------------------------------------------
-
 set nocompatible
 filetype off
 
 " 'bit of dynamism here - this is not documented in Vundle's README.
-let bundle_path=expand("%:p:h") . "/dot_vim/bundle/"
-let vundle_path=bundle_path . "/vundle/"
+let bundle_path=expand("%:p:h") . "/dot_vim/bundle"
+let vundle_path=bundle_path     . "/vundle"
 
 " This contrived statement to add our custom Vundle path to the
 " runtimepath is necessary because set statements don't take variables
 " on the RHS.
 execute "set rtp=".vundle_path
+set runtimepath+=$VIM,$VIMRUNTIME
 call vundle#rc(bundle_path)         " Undocumented.  :)
 
 Bundle 'gmarik/vundle'
@@ -56,6 +56,7 @@ Bundle 'gmarik/vundle'
 " Finally!  Fire up the works!
 syntax on
 filetype plugin indent on
+
 
 " --- Flavouring
 " ----------------------------------------------------------------------
